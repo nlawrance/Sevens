@@ -24,5 +24,10 @@ class TestDeck(unittest.TestCase):
         otherDeck = deck.Deck()
         self.assertEqual(self.deck, otherDeck, "The deck should have been reordered.")
 
+    def test_draw_card_from_deck(self):
+        card = self.deck.getIndex(0)
+        self.assertEqual(self.deck.draw(), card, "Did not draw the top card of the deck.")
+        self.assertEqual(self.deck.size(), 51, "Did not remove the card from the deck.")
+
 if __name__ == '__main__':
     unittest.main()

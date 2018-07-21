@@ -30,3 +30,7 @@ class Deck():
     # Randomises the order of the cards in the deck
     def shuffle(self):
         shuffle(self.cards)
+
+    # Removes and returns the top card of the deck
+    def draw(self):
+        return self.cards.pop()
