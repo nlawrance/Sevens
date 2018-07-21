@@ -1,9 +1,9 @@
-import Constants
+import constants as c
 from random import shuffle
 
 class Deck():
     def __init__(self):
-        self.cards = [0 for value in range(1,14) for suit in Constants.suits]
+        self.cards = [0 for value in range(1,14) for suit in c.suits]
 
     # Returns the number of cards in the deck
     def size(self):
