@@ -26,3 +26,7 @@ class Deck():
                         return False
                     return True
         return False
+
+    # Randomises the order of the cards in the deck
+    def shuffle(self):
+        shuffle(self.cards)

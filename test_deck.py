@@ -19,5 +19,10 @@ class TestDeck(unittest.TestCase):
         otherDeck = deck.Deck()
         self.assertEqual(self.deck, otherDeck, "The two decks should have been equal.")
 
+    def test_shuffling_deck(self):
+        self.deck.shuffle()
+        otherDeck = deck.Deck()
+        self.assertEqual(self.deck, otherDeck, "The deck should have been reordered.")
+
 if __name__ == '__main__':
     unittest.main()
