@@ -3,7 +3,7 @@ import constants as c
 import player
 import unittest
 
-class TestDeck(unittest.TestCase):
+class TestPlayer(unittest.TestCase):
     def setUp(self):
         self.player = player.Player()
 
