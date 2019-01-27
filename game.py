@@ -3,7 +3,7 @@ import deck
 import player
 import suitstack
 
-class Sevens:
+class Game:
     def __init__(self):
         self.reset()
 
