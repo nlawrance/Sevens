@@ -19,4 +19,15 @@ class Card():
         return False
 
     def __str__(self):
-        return self.suit + " " + str(self.value)
+        value_string = ''
+        if self.value == 1:
+            value_string = 'A'
+        elif self.value == 11:
+            value_string = 'J'
+        elif self.value == 12:
+            value_string = 'Q'
+        elif self.value == 13:
+            value_string = 'K'
+        else:
+            value_string = str(self.value)
+        return self.suit + value_string

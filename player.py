@@ -17,3 +17,9 @@ class Player():
     # Returns the name of the player
     def get_name(self):
         return self.name
+
+    def print_hand(self):
+        print(self.name, end=": ")
+        for card in self.hand:
+            print(card, end=" ")
+        print()

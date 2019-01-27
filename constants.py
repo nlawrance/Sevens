@@ -1,5 +1,5 @@
-spades = 'spades'
-hearts = 'hearts'
-clubs = 'clubs'
-diamonds = 'diamonds'
+spades = 'S'
+hearts = 'H'
+clubs = 'C'
+diamonds = 'D'
 suits = [spades, hearts, clubs, diamonds]

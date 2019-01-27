@@ -47,3 +47,21 @@ class SuitStack:
         if card.value >= 7:
             self.highest_value = card.value
         return True
+
+    def print_stack(self):
+        print('(' + self.suit + '): ', end='')
+        for num in range(1,14):
+            if self.lowest_value != None and num > self.lowest_value and num < self.highest_value:
+                if num == 1:
+                    print('A', end = ' ')
+                elif num == 11:
+                    print('J', end = ' ')
+                elif num == 12:
+                    print('Q', end = ' ')
+                elif num == 13:
+                    print('K', end = ' ')
+                else:
+                    print(num, end = ' ')
+            else:
+                print('-', end = ' ')
+        print()
