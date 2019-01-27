@@ -24,9 +24,11 @@ class SuitStack:
             raise ValueError("Only cards can be added to a stack.")
         if card.suit != self.suit:
             return False
-        if card.value == 7:
-            if self.get_highest_value() == None and self.get_lowest_value() == None:
+        if self.get_highest_value() == None or self.get_lowest_value() == None:
+            if card.value == 7:
                 return True
+            else:
+                return False
         elif card.value < 7:
             if card.value == self.get_lowest_value() - 1:
                 return True
@@ -41,7 +43,7 @@ class SuitStack:
         if not isinstance(card, cd.Card):
             raise ValueError("Only cards can be added to a stack.")
         if not self.can_add_to_stack(card):
-            raise False
+            return False
         if card.value <= 7:
             self.lowest_value = card.value
         if card.value >= 7:
@@ -51,7 +53,7 @@ class SuitStack:
     def print_stack(self):
         print('(' + self.suit + '): ', end='')
         for num in range(1,14):
-            if self.lowest_value != None and num > self.lowest_value and num < self.highest_value:
+            if self.lowest_value != None and num >= self.lowest_value and num <= self.highest_value:
                 if num == 1:
                     print('A', end = ' ')
                 elif num == 11:

@@ -23,3 +23,11 @@ class Player():
         for card in self.hand:
             print(card, end=" ")
         print()
+
+    def play(self, board):
+        for card in self.hand:
+            for stack in board:
+                if stack.add_to_stack(card):
+                    self.hand.remove(card)
+                    return True
+        return False

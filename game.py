@@ -23,8 +23,32 @@ class Game:
         while self.deck.size() > 0:
             self.players[self.deck.size() % 4].add_to_hand(self.deck.draw())
 
-    def print_game(self):
+    def print_game(self, player = -1):
         for stack in self.board:
             stack.print_stack()
+        if player != -1:
+            self.players[player].print_hand()
+        else:
+            for player in self.players:
+                player.print_hand()
+
+    def is_game_over(self):
         for player in self.players:
-            player.print_hand()
+            if player.hand_size() == 0:
+                return True
+        return False
+
+    def get_winner(self):
+        for player in self.players:
+            if player.hand_size() == 0:
+                return player.get_name()
+        return ''
+
+    def play_game(self):
+        #self.print_game()
+        turn = 0
+        while not self.is_game_over():
+            self.players[turn % 4].play(self.board)
+            #self.print_game(turn % 4)
+            turn += 1
+        return self.get_winner()
