@@ -4,7 +4,8 @@ import player
 import suitstack
 
 class Game:
-    def __init__(self):
+    def __init__(self, ai_list):
+        self.ai_list = ai_list
         self.reset()
 
     def reset(self):
@@ -14,8 +15,7 @@ class Game:
         self.deck = deck.Deck()
         self.deck.shuffle()
         # create the players
-        self.player_names = ["Player 1", "Player 2", "Player 3", "Player 4"]
-        self.players = [player.Player(name) for name in self.player_names]
+        self.players = [player.Player(ai) for ai in self.ai_list]
         # deal out the hands
         self.deal_hands()
 

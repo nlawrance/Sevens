@@ -2,9 +2,9 @@ import card
 import deck
 
 class Player():
-    def __init__(self, name):
+    def __init__(self, ai):
         self.hand = []
-        self.name = name
+        self.ai = ai
 
     # Adds the given card to the player's hand
     def add_to_hand(self, card):
@@ -16,7 +16,7 @@ class Player():
 
     # Returns the name of the player
     def get_name(self):
-        return self.name
+        return self.ai.name
 
     def print_hand(self):
         print(self.name, end=": ")
@@ -25,9 +25,4 @@ class Player():
         print()
 
     def play(self, board):
-        for card in self.hand:
-            for stack in board:
-                if stack.add_to_stack(card):
-                    self.hand.remove(card)
-                    return True
-        return False
+        return self.ai.play(self.hand, board)

@@ -1,6 +1,8 @@
 import game
+import naive_ai as n
 
-sevens = game.Game()
+ai_list = [n.NaiveAI("Adam"), n.NaiveAI("Bethea"), n.NaiveAI("Catherine"), n.NaiveAI("David")]
+sevens = game.Game(ai_list)
 wins = {}
 for i in range(0,10000):
     sevens.reset()
