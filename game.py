@@ -19,6 +19,13 @@ class Game:
         # deal out the hands
         self.deal_hands()
 
+    def rotate_ai(self):
+        tmp_ai = self.ai_list[0]
+        self.ai_list[0] = self.ai_list[1]
+        self.ai_list[1] = self.ai_list[2]
+        self.ai_list[2] = self.ai_list[3]
+        self.ai_list[3] = tmp_ai
+
     def deal_hands(self):
         while self.deck.size() > 0:
             self.players[self.deck.size() % 4].add_to_hand(self.deck.draw())

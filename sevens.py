@@ -8,6 +8,7 @@ for ai in ai_list:
 sevens = game.Game(ai_list)
 
 for i in range(0,10000):
+    sevens.rotate_ai()
     sevens.reset()
     winner = sevens.play_game()
     wins[winner] += 1
